@@ -4,9 +4,9 @@ namespace Merconis\ThemeInstaller;
 
 use LeadingSystems\MerconisThemeInstallerBundle\Scheduler\Models\SchedulerJobModel;
 
-if (TL_MODE == 'BE') {
-	$GLOBALS['TL_CSS'][] = 'bundles/leadingsystemsmerconiscustom/be/css/style.css';
-}
+//if (TL_MODE == 'BE') {
+//	$GLOBALS['TL_CSS'][] = 'bundles/leadingsystemsmerconiscustom/be/css/style.css';
+//}
 
 $GLOBALS['BE_MOD']['merconis_custom'] = array(
 	'merconis_custom_scheduler' => array(
