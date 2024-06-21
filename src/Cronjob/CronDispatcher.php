@@ -1,8 +1,8 @@
 <?php
 
-namespace LeadingSystems\MerconisCustomStarterbaseBundle\Cronjob;
+namespace LeadingSystems\MerconisThemeInstallerBundle\Cronjob;
 
-use LeadingSystems\MerconisCustomStarterbaseBundle\Scheduler\SchedulerDispatcher;
+use LeadingSystems\MerconisThemeInstallerBundle\Scheduler\SchedulerDispatcher;
 
 class CronDispatcher
 {

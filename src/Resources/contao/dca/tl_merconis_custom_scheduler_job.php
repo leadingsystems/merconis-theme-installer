@@ -1,6 +1,6 @@
 <?php
 
-namespace Merconis\CustomStarterbase;
+namespace Merconis\ThemeInstaller;
 
 use Contao\Backend;
 use Contao\BackendUser;

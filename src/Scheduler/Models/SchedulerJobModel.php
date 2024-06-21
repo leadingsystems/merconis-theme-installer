@@ -1,5 +1,5 @@
 <?php
-namespace LeadingSystems\MerconisCustomStarterbaseBundle\Scheduler\Models;
+namespace LeadingSystems\MerconisThemeInstallerBundle\Scheduler\Models;
 
 use Contao\Model;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace LeadingSystems\MerconisCustomStarterbaseBundle\Scheduler;
+namespace LeadingSystems\MerconisThemeInstallerBundle\Scheduler;
 
 use Cron\CronExpression;
-use LeadingSystems\MerconisCustomStarterbaseBundle\Scheduler\Exception\SchedulerExecutionResultException;
-use LeadingSystems\MerconisCustomStarterbaseBundle\Scheduler\Models\SchedulerJobModel;
-use LeadingSystems\MerconisCustomStarterbaseBundle\Scheduler\Traits\SchedulableTrait;
+use LeadingSystems\MerconisThemeInstallerBundle\Scheduler\Exception\SchedulerExecutionResultException;
+use LeadingSystems\MerconisThemeInstallerBundle\Scheduler\Models\SchedulerJobModel;
+use LeadingSystems\MerconisThemeInstallerBundle\Scheduler\Traits\SchedulableTrait;
 
 class SchedulerDispatcher
 {

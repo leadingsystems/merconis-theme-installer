@@ -1,6 +1,6 @@
 <?php
 
-namespace LeadingSystems\MerconisCustomStarterbaseBundle\Display\Common\Helper;
+namespace LeadingSystems\MerconisThemeInstallerBundle\Display\Common\Helper;
 
 class Helper
 {

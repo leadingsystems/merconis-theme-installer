@@ -1,6 +1,6 @@
 <?php
 
-namespace LeadingSystems\MerconisCustomStarterbaseBundle;
+namespace LeadingSystems\MerconisThemeInstallerBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -9,6 +9,6 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  *
  * @author Leading Systems GmbH
  */
-class LeadingSystemsMerconisCustomStarterbaseBundle extends Bundle
+class LeadingSystemsMerconisThemeInstallerBundle extends Bundle
 {
 }

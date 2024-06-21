@@ -5,23 +5,23 @@ services:
     autoconfigure: true
     public: false
 
-  LeadingSystems\MerconisCustomStarterbaseBundle\Display\Common\Helper\Helper:
+  LeadingSystems\MerconisThemeInstallerBundle\Display\Common\Helper\Helper:
     public: true
     autowire: false
 
-  LeadingSystems\MerconisCustomStarterbaseBundle\Cronjob\CronDispatcher:
+  LeadingSystems\MerconisThemeInstallerBundle\Cronjob\CronDispatcher:
     arguments:
-      - '@LeadingSystems\MerconisCustomStarterbaseBundle\Scheduler\SchedulerDispatcher'
+      - '@LeadingSystems\MerconisThemeInstallerBundle\Scheduler\SchedulerDispatcher'
     tags:
       - { name: contao.cronjob, interval: minutely, method: dispatchScheduler }
 
-  LeadingSystems\MerconisCustomStarterbaseBundle\Scheduler\SchedulerDispatcher:
+  LeadingSystems\MerconisThemeInstallerBundle\Scheduler\SchedulerDispatcher:
     # must only be public during development so that it can be used in apiResource_hotwireSchedulerDispatcher
     public: true
     arguments:
       - !tagged_iterator merconis_custom.schedulable
 
-  LeadingSystems\MerconisCustomStarterbaseBundle\Scheduler\Helpers\DCACallbackHelper:
+  LeadingSystems\MerconisThemeInstallerBundle\Scheduler\Helpers\DCACallbackHelper:
     arguments:
       - !tagged_iterator merconis_custom.schedulable
     tags:
@@ -30,6 +30,6 @@ services:
       - { name: contao.callback, table: tl_merconis_custom_scheduler_job, target: list.label.label, method: getSchedulerJobBackendListLabel }
 
   # Schedulable services -->
-  LeadingSystems\MerconisCustomStarterbaseBundle\Dummy\DummySchedulable:
+  LeadingSystems\MerconisThemeInstallerBundle\Dummy\DummySchedulable:
     tags:
       - { name: merconis_custom.schedulable }

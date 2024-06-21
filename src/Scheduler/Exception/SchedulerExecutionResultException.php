@@ -1,6 +1,6 @@
 <?php
 
-namespace LeadingSystems\MerconisCustomStarterbaseBundle\Scheduler\Exception;
+namespace LeadingSystems\MerconisThemeInstallerBundle\Scheduler\Exception;
 
 class SchedulerExecutionResultException extends \Exception
 {
