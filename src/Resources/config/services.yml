@@ -33,3 +33,10 @@ services:
   LeadingSystems\MerconisThemeInstallerBundle\Dummy\DummySchedulable:
     tags:
       - { name: merconis_custom.schedulable }
+
+  merconis.listener.generate_symlinks_listener:
+    class: LeadingSystems\MerconisThemeInstallerBundle\EventListener\GenerateSymlinksListener
+    arguments:
+      - '%kernel.project_dir%'
+      - '@service_container'
+      - '@?filesystem'
