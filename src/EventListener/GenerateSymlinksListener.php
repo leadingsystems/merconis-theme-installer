@@ -106,23 +106,20 @@ class GenerateSymlinksListener
         }
     }
 
-    private function getThemeResourcesConfig(){
+    private function getThemeResourcesConfig()
+    {
         $arr_composerConfig = $this->getComposerConfig();
         return $arr_composerConfig['extra']['merconis-theme-resources'] ?? [];
     }
 
-    private function getInstalledThemeFolder()
+    private function getInstalledThemeFolder(): ?string
     {
-
-        //$test = Composer::InstalledVersion();
-
-
-
-        return __DIR__ .'/../../../../'.ls_shop_generalHelper::getInstalledThemeExtensions()[0];
+        $installedTheme = ls_shop_generalHelper::getInstalledThemeExtensions()[0];
+        return InstalledVersions::getInstallPath($installedTheme);
     }
 
-    private function getComposerConfig() {
-
+    private function getComposerConfig()
+    {
         ls_shop_generalHelper::getInstalledThemeExtensions();
 
         $str_composerConfigFilePath = $this->getInstalledThemeFolder().'/composer.json';
