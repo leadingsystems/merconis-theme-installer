@@ -2,24 +2,12 @@
 
 namespace Merconis\ThemeInstaller;
 
-use LeadingSystems\MerconisThemeInstallerBundle\Scheduler\Models\SchedulerJobModel;
-
 //if (TL_MODE == 'BE') {
 //	$GLOBALS['TL_CSS'][] = 'bundles/leadingsystemsmerconiscustom/be/css/style.css';
 //}
 
-$GLOBALS['BE_MOD']['merconis_custom'] = array(
-	'merconis_custom_scheduler' => array(
-		'tables' => array('tl_merconis_custom_scheduler_job')
-	),
-);
-
-// MODELS
-$GLOBALS['TL_MODELS']['tl_merconis_custom_scheduler_job'] = SchedulerJobModel::class;
-
 // API
 $GLOBALS['LS_API_HOOKS']['apiReceiver_processRequest'][] = array('LeadingSystems\MerconisThemeInstallerBundle\API\APIGeneral', 'processRequest');
-
 
 //$GLOBALS['MERCONIS_HOOKS']['afterCheckout'][] = array('Merconis\ThemeInstaller\merconis_custom_helper', 'merconis_hook_afterCheckout');
 //$GLOBALS['MERCONIS_HOOKS']['getProductData_priceCheapestVariantBeforeTax'][] = array('Merconis\ThemeInstaller\merconis_custom_helper', 'merconis_hook_getProductData_priceCheapestVariantBeforeTax');
