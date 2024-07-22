@@ -1,8 +1,6 @@
 <?php
 namespace LeadingSystems\MerconisThemeInstallerBundle\API;
 
-use Contao\System;
-
 class APIGeneral
 {
     protected static $objInstance;
