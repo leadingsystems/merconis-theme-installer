@@ -6,7 +6,7 @@ use Contao\System;
 use Symfony\Component\HttpFoundation\Request;
 
 if (System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest(System::getContainer()->get('request_stack')->getCurrentRequest() ?? Request::create(''))) {
-	$GLOBALS['TL_CSS'][] = 'bundles/leadingsystemsmerconiscustom/be/css/style.css';
+	$GLOBALS['TL_CSS'][] = 'bundles/leadingsystemsmerconisthemeinstaller/be/css/style.css';
 }
 
 // API
