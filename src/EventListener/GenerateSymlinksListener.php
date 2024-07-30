@@ -82,6 +82,12 @@ class GenerateSymlinksListener
     }
 
     private function handleResources(GenerateSymlinksEvent $event) {
+
+        //dont generate symlinks if no theme is installed
+        if(empty(ls_shop_generalHelper::getInstalledThemeExtensions())){
+            return;
+        }
+
         $arr_themeResourcesConfig = $this->getThemeResourcesConfig();
         $str_themeResourceFolder =  $this->getInstalledThemeFolder(). '/src/Resources';
 
