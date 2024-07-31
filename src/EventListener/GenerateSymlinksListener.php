@@ -4,7 +4,7 @@ namespace LeadingSystems\MerconisThemeInstallerBundle\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\GenerateSymlinksEvent;
-use Merconis\Core\ls_shop_generalHelper;
+use Merconis\ThemeInstaller\merconis_themeInstaller_helper;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\DependencyInjection\Container;
@@ -82,6 +82,12 @@ class GenerateSymlinksListener
     }
 
     private function handleResources(GenerateSymlinksEvent $event) {
+
+        //dont generate symlinks if no theme is installed
+        if(empty(merconis_themeInstaller_helper::getInstalledThemeExtensions())){
+            return;
+        }
+
         $arr_themeResourcesConfig = $this->getThemeResourcesConfig();
         $str_themeResourceFolder =  $this->getInstalledThemeFolder(). '/src/Resources';
 
@@ -114,13 +120,13 @@ class GenerateSymlinksListener
 
     private function getInstalledThemeFolder(): ?string
     {
-        $installedTheme = ls_shop_generalHelper::getInstalledThemeExtensions()[0];
+        $installedTheme = merconis_themeInstaller_helper::getInstalledThemeExtensions()[0];
         return InstalledVersions::getInstallPath($installedTheme);
     }
 
     private function getComposerConfig()
     {
-        ls_shop_generalHelper::getInstalledThemeExtensions();
+        merconis_themeInstaller_helper::getInstalledThemeExtensions();
 
         $str_composerConfigFilePath = $this->getInstalledThemeFolder().'/composer.json';
 
