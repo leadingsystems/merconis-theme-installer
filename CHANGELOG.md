@@ -1,5 +1,5 @@
 Leading Systems Merconis Theme Installer changelog
 ===========================================
 
-### 1.0.0 (nyr: 2024-06-21)
- * wip
+### 1.0.0 (2024-09-13)
+ * official release
