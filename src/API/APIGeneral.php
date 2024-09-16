@@ -1,8 +1,6 @@
 <?php
 namespace LeadingSystems\MerconisThemeInstallerBundle\API;
 
-use Contao\System;
-
 class APIGeneral
 {
     protected static $objInstance;
@@ -38,14 +36,5 @@ class APIGeneral
         if (method_exists($this, $str_resourceName)) {
             $this->{$str_resourceName}();
         }
-    }
-
-    protected function apiResource_hotwireSchedulerDispatcher()
-    {
-        $schedulerDispatcher = System::getContainer()->get('LeadingSystems\MerconisThemeInstallerBundle\Scheduler\SchedulerDispatcher');
-        $schedulerDispatcher->dispatch(true);
-
-        $this->obj_apiReceiver->success();
-		$this->obj_apiReceiver->set_data('Test: ' . __METHOD__);
     }
 }

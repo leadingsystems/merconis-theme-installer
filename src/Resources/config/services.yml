@@ -9,27 +9,9 @@ services:
     public: true
     autowire: false
 
-  LeadingSystems\MerconisThemeInstallerBundle\Cronjob\CronDispatcher:
+  merconis.listener.generate_symlinks_listener:
+    class: LeadingSystems\MerconisThemeInstallerBundle\EventListener\GenerateSymlinksListener
     arguments:
-      - '@LeadingSystems\MerconisThemeInstallerBundle\Scheduler\SchedulerDispatcher'
-    tags:
-      - { name: contao.cronjob, interval: minutely, method: dispatchScheduler }
-
-  LeadingSystems\MerconisThemeInstallerBundle\Scheduler\SchedulerDispatcher:
-    # must only be public during development so that it can be used in apiResource_hotwireSchedulerDispatcher
-    public: true
-    arguments:
-      - !tagged_iterator merconis_custom.schedulable
-
-  LeadingSystems\MerconisThemeInstallerBundle\Scheduler\Helpers\DCACallbackHelper:
-    arguments:
-      - !tagged_iterator merconis_custom.schedulable
-    tags:
-      - { name: contao.callback, table: tl_merconis_custom_scheduler_job, target: fields.scriptToExecute.options, method: getScriptsForSchedulerExecutionAsOptions }
-      - { name: contao.callback, table: tl_merconis_custom_scheduler_job, target: fields.cronExpression.save, method: cronExpressionBackendFieldValidation }
-      - { name: contao.callback, table: tl_merconis_custom_scheduler_job, target: list.label.label, method: getSchedulerJobBackendListLabel }
-
-  # Schedulable services -->
-  LeadingSystems\MerconisThemeInstallerBundle\Dummy\DummySchedulable:
-    tags:
-      - { name: merconis_custom.schedulable }
+      - '%kernel.project_dir%'
+      - '@service_container'
+      - '@?filesystem'
