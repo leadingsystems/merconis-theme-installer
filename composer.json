@@ -1,7 +1,10 @@
 {
   "name": "leadingsystems/merconis-theme-installer",
-  "description": "",
-  "keywords": [],
+  "description": "Merconis Theme Installer",
+  "keywords": [
+    "merconis",
+    "leading systems"
+  ],
   "type": "contao-bundle",
   "license": "proprietary",
   "require": {
